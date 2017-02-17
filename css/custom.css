@@ -1,0 +1,45 @@
+html,body{
+	height: 100%;
+}
+
+.bg{
+	margin-bottom: 40px;
+	background-color: yellow;
+	height: 100%;
+	padding: 5px;
+}
+
+.content{
+	background-color: rgba(255, 255, 255, 0.64);
+	
+	margin:5px 2.5%;
+	height: 100%;
+}
+
+.nav-btm{
+	height: 40px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: grey;
+	color: white;
+	border-top: solid 1px white;
+}
+
+.nav-btm-item{
+	display: inline-block;
+	width: 35%;
+	border-right: solid 1px #eee;
+	padding: 10px;
+	margin:-1px -4px;
+}
+
+.r{
+	border-right: none;
+	width: 34%;
+
+}
+
+.active-nav{
+background-color: blue;
+}
