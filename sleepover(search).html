@@ -7,6 +7,8 @@
       <link rel="stylesheet" href="css/custom.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="stylesheet" href="css/search.css">
+
 </head>
 <body>      
 <div class="container-fluid">
@@ -14,58 +16,182 @@
             <section class="search-content">
                   <div class="col-sm-12 space-4">
                         <form action="" class="form-horizontal" method="get" id="room_index">
+                        <div class="col-sm-6 col-sm-offset-3">
+                      <div id="imaginary_container"> 
                         <div class="search-bar input-group stylish-input-group">
-                        <input name="search" id="search" style="text-transform: uppercase;" type="text" class="col-sm-12 space-4"  placeholder="Search Room/House" >
+                        <input name="search" id="search" style="text-transform: uppercase;" type="text" class="search col-sm-12"  placeholder="Search..." >
                         <span class="input-group-addon">
-                              <a type="button" onclick="event.preventDefault();      document.getElementById('room_index').submit();">
+                              <a type="button" onclick="event.preventDefault(); updateList()">
                                     <span class="fa fa-search"></span>
                               </a> 
                         </span>
                         </div>
+                        </div>
+                        </div>
                         </form>
                         </div>
-                  </div>
+                  
             </section>			
 		<section class="search-content-result">
-                  <div class="col-sm-12 space-4">
-        <ul class="list-group">
-          <li class="list-group-item clearfix">
-            <span class="badge">New</span>
 
-            <!-- image div -->
-            <span class="col-sm-4"> 
-               <a href="tenantProfile.html" ><img src="img/roomphoto.jpg" class="img-responsive" alt="Tenant's Photo" /></a>
-            </span>
+                          <h2>Search Result</h2>
+                          <ul class="list-group" id="list" >
+                            <li class="list-group-item clearfix">
+                              <a href="#" id="tag">A</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/musicalTheme.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
 
-            <!-- details div -->
-            <span class="col-sm-8">
-                <b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private Room  2 beds · Walk to Natural Homestay</a><br />
-                <b>Tenant's name:&nbsp;</b> Lee Kuan Xin <br />
-                <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017 <br />
-                <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant <br />
-                <b>Total rental fee:&nbsp;</b> RM1250 
-            </span>
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · Musical Theme Bed Room at Pontian</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 23/4/2016 - 25/4/2016 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM230
+                              </span>
+                              <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
 
+                        
+                            
+                            <li class="list-group-item clearfix">
+                            <a href="#" id="tag">B</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
 
-            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
-              <button id="btnReject" class="btn btn-warning pull-right" style="margin: 5">Reject</button>
-              <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">Accept</button>
-            </div>
-        </li>
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
 
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                                                        <a href="#" id="tag">C</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
 
-          <li class="list-group-item clearfix">
-            Dapibus ac facilisis in
-          </li>
-          <li class="list-group-item clearfix">
-            Morbi leo risus
-          </li>
-        </ul>
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                              <a href="#" id="tag">M</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
 
-    </div>    
-                  </div>
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                                                        <a href="#" id="tag">O</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
+
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                                                        <a href="#" id="tag">Q</a>
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
+
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
+
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                                                        <li class="list-group-item clearfix">
+                              <!-- image div -->
+                              <span class="col-sm-4"> 
+                                 <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+                              </span>
+
+                              <!-- details div -->
+                              <span class="col-sm-8">
+                                  <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                                  <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                                  <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                                  <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                                  <b>Total rental fee:&nbsp;</b> RM345
+                              </span>
+                                                            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+                                <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">View <span class="fa fa-search" onclick=""></span></button>
+                              </div>
+                            </li>
+                          </ul>
             </section>
-
 
             </div>
 	</div>
