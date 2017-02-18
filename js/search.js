@@ -20,7 +20,7 @@ var substringMatcher = function(strs) {
   };
 };
 
-var room = ['MA1', 'P19', 'L50', 'Pulai Spring'
+var room = ['A Relaxing Room at Pontian','A Wild Life Homestay at Selangor', 'A Beach hotel at Pontian', 'MA1', 'P19', 'L50', 'Pulai Spring'
 ];
 
 $('.search-bar #search').typeahead({
