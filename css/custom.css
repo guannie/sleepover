@@ -3,7 +3,9 @@
 html,body{
 	height: 100%;
 }
-
+h3>a{
+	color: white;
+}
 a.tab{
 	color: #ddd;
 }
@@ -43,6 +45,7 @@ a.tab{
 
 
 .nav-btm{
+	z-index: 1;
 	border-radius: 4px;
 	height: 40px;
 	position: fixed;
@@ -123,6 +126,10 @@ a.tab{
 
 }
 
+.room-thumbnail{
+	height:50px;
+	width: 50px;
+}
 @media (min-width: 410px)
 {
 	.r{
