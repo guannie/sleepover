@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Roboto+Slab');
+
 html,body{
 	height: 100%;
 }
@@ -5,25 +7,40 @@ html,body{
 a.tab{
 	color: #ddd;
 }
-
+.bg,.content,.step{
+	display: none;
+}
 .bg{
 	margin-bottom: 40px;
 	background-color: #fff;
 	height: 100%;
-	display: none;
+	
 }
 
-.active-bg{
+.active-bg,.active-content,.active-step{
 	display: block;
 }
 
+.active-nav{
+	background-color: #fff;
+	color: #4ee3aa;
+	border-top: none;
+	border-right: solid 1px #4ee3aa;
+	border-left: solid 1px #4ee3aa;
+	border-bottom: solid 1px #4ee3aa;
+}
 
 .content{
-	background-color: rgba(255, 255, 255, 0.64);
-	
-	margin:5px 2.5%;
+	background-color: #fff;
+	color: #d7d7d7;	
 	height: 100%;
+	font-family: 'Roboto Slab', san-serif;	
+	padding:30px 10px;
 }
+
+
+
+
 
 .nav-btm{
 	border-radius: 4px;
@@ -53,14 +70,7 @@ a.tab{
 
 }
 
-.active-nav{
-	background-color: #fff;
-	color: #4ee3aa;
-	border-top: none;
-	border-right: solid 1px #4ee3aa;
-	border-left: solid 1px #4ee3aa;
-	border-bottom: solid 1px #4ee3aa;
-}
+
 
 .header{
 	background-color: #4ee3aa;
@@ -70,7 +80,50 @@ a.tab{
 
 }
 
-@media (min-width: 425px)
+.choice
+{
+	font-size: 28px;
+	display: inline-block;
+	width: 50%;
+	padding: 20px 10px;
+}
+
+.choice:hover,.back-arrow:hover{
+	color:#4ee3aa;
+}	
+
+
+.flex{
+	display: flex;
+}
+
+.back-arrow{
+	font-size: 30px!important;
+	text-align: left;
+}
+
+.btn-next{
+	background: #4de187;
+	border: solid 1px #62d899;
+	color: white;
+	padding: 5px 20px;
+	border-radius: 8px;
+	font-size: 18px;
+}
+
+.photo{
+	font-size: 28px;
+	display: inline-block;
+	height: 250px;
+	width: 100%;
+	padding: 20px 10px;
+	padding-top: 80px;
+	text-align: center;
+	border: solid 1px #efefef;
+
+}
+
+@media (min-width: 410px)
 {
 	.r{
 		width:33%;

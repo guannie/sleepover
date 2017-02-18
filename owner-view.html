@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	
 </head>
 <body>	
 	<!--bottom nav-->
@@ -25,32 +25,139 @@
 		<div class="header activeC">
 			My Unit
 		</div>
-		
-	</div>
-	<!--end of content-->
 
-	<!--content-->
-	<div id="booking-history" class="bg">
-		<div class="header">
-			Previous Bookings
+		<div id="empty-unit" class="content active-content text-center" style="padding-top: 125px;font-size: 37px;">
+			You have not registered any unit.
+			<br>
+			<span class="fa fa-plus-square"></span>
+			
 		</div>
-		
-	</div>
-	<!--end of content-->
 
-	<!--content-->
-	<div id="current-booking" class="bg">
-		<div class="header">
-			Current Bookings
-		</div>
-		
-	</div>
-	<!--end of content-->
+		<div id="add-unit" class="content">
+			<input type="hidden" id="type">
+			<div class="step step-1 active-step text-center" data-step="1">
 
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/font-awesome.min.js"></script>
-</body>
-</html>
+				<br>
+				<h1>Are you posting a</h1>
+
+				<div class="choice" data-type="homestay" >
+					<span class="fa fa-home"></span>
+					<br>
+					Homestay					
+				</div>
+				<br>
+				or
+				<br>
+				<div class="choice" data-type="room">
+					<span class="fa fa-bed"></span>
+					<br>
+					Room
+				</div>
+				<br>
+				<span class="fa fa-arrow-circle-left back-arrow pull-left" ></span>
+			</div>
+			<div class="step step-2" data-step="2" style="color:#7c7c7c">
+				<label for="address">Address</label><br>			
+				<input type="text" id="address" name="address" class="form-control"><br>
+				<label for="pax">Number of Pax</label><br>			
+				<input type="text" id="pax" name="pax" class="form-control"><br>
+				<label for="pax">Number of Bathroom</label><br>			
+				<input type="text" id="bathroom" name="bathroom" class="form-control"><br>
+				<label for="Amenities"><strong>Amenities</strong></label><br>			
+				<input type="checkbox" value="air-cond" name="air-cond" ><label for="air-cond"> &nbsp;Air-conditioner</label><br>
+				<input type="checkbox" value="water-heater" name="water-heater"><label for="water-heater"> &nbsp;Water heater</label><br>
+				<input type="checkbox" value="wifi" name="wifi"><label for="wifi">&nbsp;Wifi</label><br>
+				<br>
+				<button class="btn-next pull-right">Next <span class="fa fa-arrow-right"></span></button>
+				<span class="fa fa-arrow-circle-left back-arrow pull-left" ></span>
+			</div>
+
+			<div class="step step-3" data-step="3" style="color:#7c7c7c">
+				<h3>Showcase your unit well.</h3>
+				<div class="photo"  >
+					<span class="fa fa-camera"></span>
+					<br>
+					Take a Photo				
+				</div>
+				<br>
+				<br>
+				
+				<button class="btn-next pull-right">Next <span class="fa fa-arrow-right"></span></button>
+				<span class="fa fa-arrow-circle-left back-arrow pull-left" ></span>
+			</div>
+
+			<div class="step step-4" data-step="4" style="color:#7c7c7c">
+				<h3>
+					Unit Rate <br>
+					<small><i>Enter a rate for your unit. Below are the reference rates of similar units nearby.</i></small>
+				</h3>
+				<br>
+				<label for="">Highest: </label><span>RM50</span><br>
+				<label for="">Average: </label><span>RM50</span><br>				
+				<label for="">Lowest: </label><span>RM50</span><br>
+				<label for="">Amenities Provided By Others: </label><br>
+				<span class="fa fa-check-square"></span>Air-Conditioner
+				<span class="fa fa-check-square"></span>Water Heater
+				<span class="fa fa-check-square"></span>Wifi
+				<br>
+				<br>
+				<label for="P">Your Rate</label><br>			
+				<input type="text" id="unit-rate" name="unit-rate" class="form-control"><br>
+				
+				<button class="btn-next pull-right">Submit </span></button>
+				<span class="fa fa-arrow-circle-left back-arrow pull-left" ></span>
+
+			</div>
+
+			<div class="step step-5" data-step="5" style="color:#7c7c7c">
+				<ul class="list-group">
+					<li class="list-group-item clearfix">
+						<!-- image div -->
+						<span class="col-sm-4"><a href="roomdetails.html">
+						<img src="img/musicalTheme.jpg" class="room-thumbnail" alt="Room's Photo" /></a>
+						</span>
+						<!-- details div -->
+						<span class="col-sm-8"><a href="roomdetails.html" target="_blank">Private Room 1 bed
+							· Musical Theme Bed Room at Pontian</a><br />
+							<b>Status:&nbsp;</b> <span style="color: Green">Finished</span><br />
+							<b>Renting period:&nbsp;</b> 23/4/2016 - 25/4/2016
+							<br />
+							<b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 0 Infant
+							<br />
+							<b>Total rental fee:&nbsp;</b> RM230 </span></li>
+						</ul>
+
+					</div>
+
+
+				</div>
+
+			</div>
+			<!--end of content-->
+
+			<!--content-->
+			<div id="booking-history" class="bg">
+				<div class="header">
+					Previous Bookings
+				</div>
+
+
+			</div>
+			<!--end of content-->
+
+			<!--content-->
+			<div id="current-booking" class="bg">
+				<div class="header">
+					Current Bookings
+				</div>
+
+			</div>
+			<!--end of content-->
+
+
+			<script src="js/jquery.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/custom.js"></script>
+			<script src="js/font-awesome.min.js"></script>
+		</body>
+		</html>
