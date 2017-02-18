@@ -6,21 +6,41 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>	
 	<!--bottom nav-->
 	<nav class="nav-btm">
-		<div class="nav-btm-item">curr</div>
-		<div class="nav-btm-item">search</div>
-		<div class="nav-btm-item r">prev</div>
+		<a class="tab" href="#current"><div class="nav-btm-item"><span class="fa fa-bed"></span></div></a>
+		<a class="tab" href="#search"><div class="nav-btm-item active-nav"><span class="fa fa-search"></span></div></a>
+		<a class="tab" href="#history"><div class="nav-btm-item r"><span class="fa fa-history"></span></div></a>
 	</nav>
 
 	<!--end bottom nav-->
 
 	<!--content-->
-	<div class="bg">
-		<div class="content">
-			
+	<div id="search" class="bg active-bg">
+		<div class="header activeC">
+			Find a Room
+		</div>
+		
+	</div>
+	<!--end of content-->
+
+	<!--content-->
+	<div id="history" class="bg">
+		<div class="header">
+			Your Bookings
+		</div>
+		
+	</div>
+	<!--end of content-->
+
+	<!--content-->
+	<div id="current" class="bg">
+		<div class="header">
+			Current Bookings
 		</div>
 		
 	</div>
@@ -30,5 +50,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="https://use.fontawesome.com/9d99588ffc.js"></script>
 </body>
 </html>
