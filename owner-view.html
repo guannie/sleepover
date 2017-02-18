@@ -223,7 +223,7 @@
 										<div class="col-sm-8" >
 											<button id="btnReject" class="btn btn-warning pull-right" style="margin: 5px">
 												Reject</button>
-												<button id="btnAccept" class="btn btn-success pull-right" style="margin: 5px">
+												<button id="btnAcceptBooking" class="btn btn-success pull-right" style="margin: 5px">
 													Accept</button>
 												</div>
 											</li>
@@ -233,11 +233,19 @@
 									<!--end of content-->
 
 
+
+
+									<script src="js/jquery.js"></script>
+									<script src="js/bootstrap.min.js"></script>
+									<script src="js/custom.js"></script>
+									<script src="js/font-awesome.min.js"></script>
+
+
 <script>
     // Move the pending tenant to the record 
-    $("#btnAccept").click(function () {
+    $("#btnAcceptBooking").click(function () {
         $("#status").replaceWith("<span style='color: green'>Accepted</span>");
-        $("#btnAccept").remove();
+        $("#btnAcceptBooking").remove();
         $("#btnReject").remove();
         $("#previousTenant").prepend($('#pendingTenant'));
         $("#pendingTenant").wrap();
@@ -263,7 +271,7 @@
       function (isConfirm) {
           if (isConfirm) {
               $("#status").replaceWith("<span style='color: red'>Rejected</span>");
-              $("#btnAccept").remove();
+              $("#btnAcceptBooking").remove();
               $("#btnReject").remove();
               $("#previousTenant").prepend($('#pendingTenant'));
               $("#pendingTenant").wrap();
@@ -276,11 +284,5 @@
       });
     });
 </script>
-
-
-									<script src="js/jquery.js"></script>
-									<script src="js/bootstrap.min.js"></script>
-									<script src="js/custom.js"></script>
-									<script src="js/font-awesome.min.js"></script>
 								</body>
 								</html>
