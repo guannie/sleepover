@@ -3,6 +3,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<!-- Implement SweetAlert for better alert message -->
+<script src="js/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+
 <div class="container">
     <div class="col-sm-12 space-4">
         <h3 id="pendingTitle">Current booking</h3>
@@ -75,15 +80,36 @@
     </div>
 </div>
 <script>
-    $("#btnCancel").click(function () {
-        var flag = confirm("Are you sure you want to cancel this order? Refunding might take about 7 working days");
 
-        if(flag === true){
+    // Mimicking the cancel process 
+    $("#btnCancel").click(function () {
+      swal({
+        title: "Are you sure you want to cancel this order?",
+        text: "Refunding might take about 7 working days",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, cancel booking!",
+        cancelButtonText: "No, don't cancel!",
+        closeOnConfirm: false,
+        closeOnCancel: false
+      },
+      function(isConfirm){
+        if (isConfirm) {
           $("#status").replaceWith("<span style='color: red'>Cancelled</span>");
           $("#btnCancel").remove();
           $("#history").prepend($('#currentBooking'));
           $("#currentBooking").wrap();
           $("#pendingTitle").remove();
+
+          swal({
+            title: "Successfully cancelled the booking!",
+            type: "success",
+            confirmButtonText: "Cool"
+          });
+        } else {
+          swal("Not cancelling", "Your booking request is safe", "error");
         }
+      });
     });
 </script>

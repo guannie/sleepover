@@ -3,6 +3,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<!-- Implement SweetAlert for better alert message -->
+<script src="js/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+
 <div class="container">
     <div class="col-sm-12 space-4">
         <h3 id="pendingTitle">
@@ -81,7 +86,7 @@
 
 
 <script>
-  <!-- Move the pending tenant to the record, might need a pop up modal to indicate successfully accepted the booking? -->
+  // Move the pending tenant to the record 
   $("#btnAccept").click(function(){
     $("#status").replaceWith("<span style='color: green'>Accepted</span>");
     $("#btnAccept").remove();
@@ -89,19 +94,37 @@
     $("#previousTenant").prepend($('#pendingTenant'));
     $("#pendingTenant").wrap();
     $("#pendingTitle").remove();
+
+    swal("Successful", "Booking accepted!", "success")
   });
 
 
   $("#btnReject").click(function(){
-    var flag = confirm("Are you sure to reject this booking?");
 
-    if(flag === true){
-      $("#status").replaceWith("<span style='color: red'>Rejected</span>");
-      $("#btnAccept").remove();
-      $("#btnReject").remove();
-      $("#previousTenant").prepend($('#pendingTenant'));
-      $("#pendingTenant").wrap();
-      $("#pendingTitle").remove();
-    }
+     swal({
+        title: "Are you sure to reject this booking?",
+     
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, reject it!",
+        cancelButtonText: "No",
+        closeOnConfirm: false,
+        closeOnCancel: false
+      },
+      function(isConfirm){
+        if (isConfirm) {
+          $("#status").replaceWith("<span style='color: red'>Rejected</span>");
+          $("#btnAccept").remove();
+          $("#btnReject").remove();
+          $("#previousTenant").prepend($('#pendingTenant'));
+          $("#pendingTenant").wrap();
+          $("#pendingTitle").remove();
+
+          swal("Successful", "Booking rejected!", "success");
+        } else {
+          swal("Not Cancelling", "Booking request is safe", "error");
+        }
+      });
   });
 </script>
