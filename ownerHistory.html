@@ -3,11 +3,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
 <!-- Implement SweetAlert for better alert message -->
 <script src="js/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-
 <div class="container">
     <div class="col-sm-12 space-4">
         <h3 id="pendingTitle">
@@ -16,20 +14,21 @@
             <li id="pendingTenant" class="list-group-item clearfix"><span class="badge">New</span>
                 <!-- image div -->
                 <span class="col-sm-4"><a href="tenantProfile.html">
-                    <img src="img/guanxuan.jpg" class="img-responsive" alt="Tenant's Photo" height="250"
+                    <img src="img/raymond.jpg" class="img-responsive" alt="Tenant's Photo" height="250"
                         width="250" /></a> </span>
                 <!-- details div -->
                 <span class="col-sm-8"><b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private
                     Room 2 beds · Walk to Natural Homestay</a><br />
-                    <b>Tenant's name:&nbsp;</b> Lee Kuan Xin
+                    <b>Tenant's name:&nbsp;</b> <a href="raymond.html">Raymond Tan</a>
                     <br />
                     <b>Status:&nbsp;</b> <span id="status" style="color: orange">Pending</span>
                     <br />
-                    <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017
+                    <b>Renting period:&nbsp;</b> 20/12/2016 - 23/12/2016
                     <br />
-                    <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant
+                    <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant
                     <br />
-                    <b>Total rental fee:&nbsp;</b> RM1250 </span>
+                    <b>Total rental fee:&nbsp;</b> RM650 </span>
+                <!-- button div -->
                 <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
                     <button id="btnReject" class="btn btn-warning pull-right" style="margin: 5">
                         Reject</button>
@@ -44,22 +43,20 @@
             <li class="list-group-item clearfix">
                 <!-- image div -->
                 <span class="col-sm-4"><a href="tenantProfile.html">
-                    <img src="img/raymond.jpg" class="img-responsive" alt="Tenant's Photo" height="250"
+                    <img src="img/guanxuan.jpg" class="img-responsive" alt="Tenant's Photo" height="250"
                         width="250" /></a> </span>
                 <!-- details div -->
                 <span class="col-sm-8"><b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private
                     Room 2 beds · Walk to Natural Homestay</a><br />
-                    <b>Tenant's name:&nbsp;</b> Raymond Tan
+                    <b>Tenant's name:&nbsp;</b> <a href="guanxuan.html">Lee Kuan Xin</a>
                     <br />
                     <b>Status:&nbsp;</b> <span style="color: grey">Finished</span>
                     <br />
-                    <b>Renting period:&nbsp;</b> 20/12/2016 - 23/12/2016
+                    <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017
                     <br />
-                    <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant
+                    <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant
                     <br />
-                    <b>Total rental fee:&nbsp;</b> RM650 </span>
-            </li>
-
+                    <b>Total rental fee:&nbsp;</b> RM1250 </span></li>
             <li class="list-group-item clearfix">
                 <!-- image div -->
                 <span class="col-sm-4"><a href="tenantProfile.html">
@@ -68,7 +65,7 @@
                 <!-- details div -->
                 <span class="col-sm-8"><b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private
                     Room 2 beds · Walk to Natural Homestay</a><br />
-                    <b>Tenant's name:&nbsp;</b> Pang Cheng Hao
+                    <b>Tenant's name:&nbsp;</b> <a href="pangchenghao.html">Pang Cheng Hao</a>
                     <br />
                     <b>Status:&nbsp;</b> <span style="color: grey">Finished</span>
                     <br />
@@ -76,55 +73,50 @@
                     <br />
                     <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant
                     <br />
-                    <b>Total rental fee:&nbsp;</b> RM1200 </span>
-            </li>
-
+                    <b>Total rental fee:&nbsp;</b> RM1200 </span></li>
         </ul>
     </div>
 </div>
-
-
-
 <script>
-  // Move the pending tenant to the record 
-  $("#btnAccept").click(function(){
-    $("#status").replaceWith("<span style='color: green'>Accepted</span>");
-    $("#btnAccept").remove();
-    $("#btnReject").remove();
-    $("#previousTenant").prepend($('#pendingTenant'));
-    $("#pendingTenant").wrap();
-    $("#pendingTitle").remove();
+    // Move the pending tenant to the record 
+    $("#btnAccept").click(function () {
+        $("#status").replaceWith("<span style='color: green'>Accepted</span>");
+        $("#btnAccept").remove();
+        $("#btnReject").remove();
+        $("#previousTenant").prepend($('#pendingTenant'));
+        $("#pendingTenant").wrap();
+        $("#pendingTitle").remove();
 
-    swal("Successful", "Booking accepted!", "success")
-  });
+        swal("Successful", "Booking accepted!", "success")
+    });
 
 
-  $("#btnReject").click(function(){
+    $("#btnReject").click(function () {
 
-     swal({
-        title: "Are you sure to reject this booking?",
-     
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes, reject it!",
-        cancelButtonText: "No",
-        closeOnConfirm: false,
-        closeOnCancel: false
-      },
-      function(isConfirm){
-        if (isConfirm) {
-          $("#status").replaceWith("<span style='color: red'>Rejected</span>");
-          $("#btnAccept").remove();
-          $("#btnReject").remove();
-          $("#previousTenant").prepend($('#pendingTenant'));
-          $("#pendingTenant").wrap();
-          $("#pendingTitle").remove();
+        swal({
+            title: "Are you sure to reject this booking?",
 
-          swal("Successful", "Booking rejected!", "success");
-        } else {
-          swal("Not Cancelling", "Booking request is safe", "error");
-        }
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, reject it!",
+            cancelButtonText: "No",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+      function (isConfirm) {
+          if (isConfirm) {
+              $("#status").replaceWith("<span style='color: red'>Rejected</span>");
+              $("#btnAccept").remove();
+              $("#btnReject").remove();
+              $("#previousTenant").prepend($('#pendingTenant'));
+              $("#pendingTenant").wrap();
+              $("#pendingTitle").remove();
+
+              swal("Successful", "Booking rejected!", "success");
+          } else {
+              swal("Not Cancelling", "Booking request is safe", "error");
+          }
       });
-  });
+    });
 </script>
