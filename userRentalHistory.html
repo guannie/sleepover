@@ -1,0 +1,80 @@
+ <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<div class="container">
+    <div class="col-sm-12 space-4">
+        <ul class="list-group">
+          <li class="list-group-item clearfix">
+            <span class="badge">New</span>
+
+            <!-- image div -->
+            <span class="col-sm-4"> 
+               <a href="roomdetails.html" ><img src="img/naturalHomestay.jpg" class="img-responsive" alt="Room's Photo" /></a>
+            </span>
+
+            <!-- details div -->
+            <span class="col-sm-8">
+                <a href="roomdetails.html" target="_blank">Private Room  2 beds · Walk to Natural Homestay</a><br />
+                <b>Status:&nbsp;</b> <span style="color: orange">Pending</span><br />
+                <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017 <br />
+                <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant <br />
+                <b>Total rental fee:&nbsp;</b> RM1250 
+            </span>
+
+
+            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+              <button id="btnCancel" class="btn btn-danger pull-right" style="margin: 5">Cancel Booking</button>
+            </div>
+        </li>
+</ul>
+
+        <h2>Renting History</h2>
+        <ul>
+          <li class="list-group-item clearfix">
+            <!-- image div -->
+            <span class="col-sm-4"> 
+               <a href="roomdetails.html" ><img src="img/musicalTheme.jpg" class="img-responsive" alt="Room's Photo" /></a>
+            </span>
+
+            <!-- details div -->
+            <span class="col-sm-8">
+                <a href="roomdetails.html" target="_blank">Private Room  1 bed · Musical Theme Bed Room at Pontian</a><br />
+                <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                <b>Renting period:&nbsp;</b> 23/4/2016 - 25/4/2016 <br />
+                <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 0 Infant <br />
+                <b>Total rental fee:&nbsp;</b> RM230
+            </span>
+          </li>
+
+
+          <li class="list-group-item clearfix">
+            <!-- image div -->
+            <span class="col-sm-4"> 
+               <a href="roomdetails.html" ><img src="img/cosyRoom.jpg" class="img-responsive" alt="Room's Photo" /></a>
+            </span>
+
+            <!-- details div -->
+            <span class="col-sm-8">
+                <a href="roomdetails.html" target="_blank">Private Room  1 bed · The Cosy Room With A Seaside View</a><br />
+                <b>Status:&nbsp;</b> <span style="color: Green">Success</span><br />
+                <b>Renting period:&nbsp;</b> 22/6/2015 - 28/6/2015 <br />
+                <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant <br />
+                <b>Total rental fee:&nbsp;</b> RM345
+            </span>
+          </li>
+        </ul>
+
+    </div>    
+</div>
+
+<script>
+  $("#btnCancel").click(function(){
+    confirm("Are you sure you want to cancel this order? Refunding might take about 7 working days");
+  });
+</script>
