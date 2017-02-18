@@ -5,9 +5,9 @@
 <script src="js/bootstrap.min.js"></script>
 <div class="container">
     <div class="col-sm-12 space-4">
-        <h3>Current booking</h3>
+        <h3 id="pendingTitle">Current booking</h3>
         <ul class="list-group">
-            <li class="list-group-item clearfix"><span class="badge">New</span>
+            <li id="currentBooking" class="list-group-item clearfix"><span class="badge">New</span>
                 <!-- image div -->
                 <span class="col-sm-4"><a href="roomdetails.html">
                     <img src="img/naturalHomestay.jpg" class="img-responsive" alt="Room's Photo" /></a>
@@ -15,7 +15,7 @@
                 <!-- details div -->
                 <span class="col-sm-8"><a href="roomdetails.html" target="_blank">Private Room 2 beds
                     · Walk to Natural Homestay</a><br />
-                    <b>Status:&nbsp;</b> <span style="color: orange">Pending</span><br />
+                    <b>Status:&nbsp;</b> <span id="status" style="color: orange">Pending</span><br />
                     <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017
                     <br />
                     <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant
@@ -28,7 +28,7 @@
             </li>
         </ul>
         <h3>Renting History</h3>
-        <ul class="list-group">
+        <ul id="history" class="list-group">
             <li class="list-group-item clearfix">
                 <!-- image div -->
                 <span class="col-sm-4"><a href="roomdetails.html">
@@ -76,6 +76,14 @@
 </div>
 <script>
     $("#btnCancel").click(function () {
-        confirm("Are you sure you want to cancel this order? Refunding might take about 7 working days");
+        var flag = confirm("Are you sure you want to cancel this order? Refunding might take about 7 working days");
+
+        if(flag === true){
+          $("#status").replaceWith("<span style='color: red'>Cancelled</span>");
+          $("#btnCancel").remove();
+          $("#history").prepend($('#currentBooking'));
+          $("#currentBooking").wrap();
+          $("#pendingTitle").remove();
+        }
     });
 </script>

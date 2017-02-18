@@ -5,10 +5,10 @@
 <script src="js/bootstrap.min.js"></script>
 <div class="container">
     <div class="col-sm-12 space-4">
-        <h3>
+        <h3 id="pendingTitle">
             Pending Tenants</h3>
         <ul class="list-group">
-            <li class="list-group-item clearfix"><span class="badge">New</span>
+            <li id="pendingTenant" class="list-group-item clearfix"><span class="badge">New</span>
                 <!-- image div -->
                 <span class="col-sm-4"><a href="tenantProfile.html">
                     <img src="img/guanxuan.jpg" class="img-responsive" alt="Tenant's Photo" height="250"
@@ -17,6 +17,8 @@
                 <span class="col-sm-8"><b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private
                     Room 2 beds · Walk to Natural Homestay</a><br />
                     <b>Tenant's name:&nbsp;</b> Lee Kuan Xin
+                    <br />
+                    <b>Status:&nbsp;</b> <span id="status" style="color: orange">Pending</span>
                     <br />
                     <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017
                     <br />
@@ -33,7 +35,7 @@
         </ul>
         <h3>
             Previous Tenants</h3>
-        <ul class="list-group">
+        <ul id="previousTenant" class="list-group">
             <li class="list-group-item clearfix">
                 <!-- image div -->
                 <span class="col-sm-4"><a href="tenantProfile.html">
@@ -43,6 +45,8 @@
                 <span class="col-sm-8"><b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private
                     Room 2 beds · Walk to Natural Homestay</a><br />
                     <b>Tenant's name:&nbsp;</b> Raymond Tan
+                    <br />
+                    <b>Status:&nbsp;</b> <span style="color: grey">Finished</span>
                     <br />
                     <b>Renting period:&nbsp;</b> 20/12/2016 - 23/12/2016
                     <br />
@@ -61,6 +65,8 @@
                     Room 2 beds · Walk to Natural Homestay</a><br />
                     <b>Tenant's name:&nbsp;</b> Pang Cheng Hao
                     <br />
+                    <b>Status:&nbsp;</b> <span style="color: grey">Finished</span>
+                    <br />
                     <b>Renting period:&nbsp;</b> 11/12/2016 - 18/12/2016
                     <br />
                     <b>Number of Guest:&nbsp;</b> 2 Adults / 0 Children / 0 Infant
@@ -71,3 +77,31 @@
         </ul>
     </div>
 </div>
+
+
+
+<script>
+  <!-- Move the pending tenant to the record, might need a pop up modal to indicate successfully accepted the booking? -->
+  $("#btnAccept").click(function(){
+    $("#status").replaceWith("<span style='color: green'>Accepted</span>");
+    $("#btnAccept").remove();
+    $("#btnReject").remove();
+    $("#previousTenant").prepend($('#pendingTenant'));
+    $("#pendingTenant").wrap();
+    $("#pendingTitle").remove();
+  });
+
+
+  $("#btnReject").click(function(){
+    var flag = confirm("Are you sure to reject this booking?");
+
+    if(flag === true){
+      $("#status").replaceWith("<span style='color: red'>Rejected</span>");
+      $("#btnAccept").remove();
+      $("#btnReject").remove();
+      $("#previousTenant").prepend($('#pendingTenant'));
+      $("#pendingTenant").wrap();
+      $("#pendingTitle").remove();
+    }
+  });
+</script>
