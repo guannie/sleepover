@@ -32,3 +32,5 @@ $('.search-bar #search').typeahead({
   name: 'room',
   source: substringMatcher(room)
 });
+
+$('.search-bar #search').addClass("col-sm-12 space-4");

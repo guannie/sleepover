@@ -9,34 +9,65 @@
       <link rel="stylesheet" href="css/font-awesome.css">
 </head>
 <body>      
-
-<!--bottom nav-->
-	<nav class="nav-btm">
-		<div class="nav-btm-item">curr</div>
-		<div class="nav-btm-item">search</div>
-		<div class="nav-btm-item r">prev</div>
-	</nav>
-
-	<!--end bottom nav-->
-
-	<!--content-->
-	<div class="bg">
-		<div class="content">
+<div class="container-fluid">
+    <div class="col-sm-12 space-4">
             <section class="search-content">
-                  <form action="" class="form-horizontal" method="get" id="room_index">
-                  <div class="search-bar">
-                  <input name="search" id="search" style="text-transform: uppercase;" type="text" class=""  placeholder="Search Room/House" >
-                  <span class="">
-                        <a type="button" onclick="event.preventDefault();      document.getElementById('room_index').submit();">
-                              <span class="fa fa-search"></span>
-                        </a> 
-                  </span>
-                  </div>
-                  </form>
-          
+                  <div class="col-sm-12 space-4">
+                        <form action="" class="form-horizontal" method="get" id="room_index">
+                        <div class="search-bar input-group stylish-input-group">
+                        <input name="search" id="search" style="text-transform: uppercase;" type="text" class="col-sm-12 space-4"  placeholder="Search Room/House" >
+                        <span class="input-group-addon">
+                              <a type="button" onclick="event.preventDefault();      document.getElementById('room_index').submit();">
+                                    <span class="fa fa-search"></span>
+                              </a> 
+                        </span>
+                        </div>
+                        </form>
+                        </div>
                   </div>
             </section>			
-		</div>
+		<section class="search-content-result">
+                  <div class="col-sm-12 space-4">
+        <ul class="list-group">
+          <li class="list-group-item clearfix">
+            <span class="badge">New</span>
+
+            <!-- image div -->
+            <span class="col-sm-4"> 
+               <a href="tenantProfile.html" ><img src="img/roomphoto.jpg" class="img-responsive" alt="Tenant's Photo" /></a>
+            </span>
+
+            <!-- details div -->
+            <span class="col-sm-8">
+                <b>Chosen room:&nbsp;</b><a href="roomdetails.html" target="_blank">Private Room  2 beds · Walk to Natural Homestay</a><br />
+                <b>Tenant's name:&nbsp;</b> Lee Kuan Xin <br />
+                <b>Renting period:&nbsp;</b> 20/2/2017 - 27/2/2017 <br />
+                <b>Number of Guest:&nbsp;</b> 2 Adults / 1 Children / 1 Infant <br />
+                <b>Total rental fee:&nbsp;</b> RM1250 
+            </span>
+
+
+            <div class="col-sm-8" style="position: relative; bottom: 0; right: 0">
+              <button id="btnReject" class="btn btn-warning pull-right" style="margin: 5">Reject</button>
+              <button id="btnAccept" class="btn btn-success pull-right" style="margin: 5">Accept</button>
+            </div>
+        </li>
+
+
+          <li class="list-group-item clearfix">
+            Dapibus ac facilisis in
+          </li>
+          <li class="list-group-item clearfix">
+            Morbi leo risus
+          </li>
+        </ul>
+
+    </div>    
+                  </div>
+            </section>
+
+
+            </div>
 	</div>
 <!--end of content-->
 
