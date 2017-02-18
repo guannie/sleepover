@@ -65,7 +65,7 @@ a.tab{
 .header{
 	background-color: #4ee3aa;
 	color: white;
-	font-size: 32px;
+	font-size: 24px;
 	padding: 10px;
 
 }
@@ -76,3 +76,4 @@ a.tab{
 		width:33%;
 	}
 }
+
